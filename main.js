@@ -12,12 +12,16 @@ function createWindow() {
         pathname: path.join(__dirname, 'index.html'),
         protocol:'file',
         slashes: true
-
-
-
     }))
 }
 
-
+exports.openWindow = () =>{
+    let newWin = new BrowserWindow({width:600, height:400})
+    newWin.loadURL(url.format({
+        pathname: path.join(__dirname, 'segundaV.html'),
+        protocol:'file',
+        slashes: true
+    }))
+}
 
 app.on('ready',createWindow)
