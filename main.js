@@ -24,6 +24,9 @@ exports.openWindow = () =>{
         protocol:'file',
         slashes: true
     }))
+    webPreferences: {
+        nodeIntegration: false
+      }
 }
 
 app.on('ready',createWindow)
