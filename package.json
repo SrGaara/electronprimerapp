@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/SrGaara/electronfirstproject#readme",
   "dependencies": {
-    "electron": "^3.0.13"
+    "electron": "^3.0.13",
+    "jquery": "^3.3.1"
   }
 }
