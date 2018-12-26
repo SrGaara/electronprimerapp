@@ -2,6 +2,10 @@ const remote = require('electron').remote
 const main = remote.require('./main.js')
 
 $(function(){
+    const mysql = require('mysql')
+    const connection =mysql.createConnection({
+        
+    })
     const os = require('os')
 	const prettyBytes = require('pretty-bytes')
 
@@ -11,14 +15,14 @@ $(function(){
 
 	const ul = $('.flipster ul');
 
-	$.get('http://enupal.com/blog/rss', function(response){
+	$.get('http://blog.fotec.mx/rss', function(response){
 
 		const rss = $(response)
 
 		rss.find('item').each(function(){
 			const item = $(this)
 
-			const content = item.find('description').html().split('</a></div>')[1]+'</a></div>'
+			const content = item.find('description').html().split('</a></div>')+'</a></div>'
 
 			const urlRegex = /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/g;
 

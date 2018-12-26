@@ -8,13 +8,16 @@ let win
 
 function createWindow() {
     win = new BrowserWindow({
-        width:800, height:600
+        width:800, height:600,
+        nodeIntegration: false,
+        preload: './preload.js'
     })
     win.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol:'file',
         slashes: true
     }))
+    win.webContents.openDevTools()
 }
 
 exports.openWindow = () =>{
